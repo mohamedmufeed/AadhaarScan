@@ -15,7 +15,8 @@ export class OcrController implements IOcrController {
                 return
             }
 
-            const result = await this._ocrService.processAadhaarOCR(front.path, back.path);
+      const result = await this._ocrService.processAadhaarOCR(front.buffer, back.buffer);
+
             res.status(200).json(result);
         } catch (error) {
             console.error("OCR Processing Error:", error);

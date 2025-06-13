@@ -2,10 +2,11 @@ import path from "path"
 import Tesseract from "tesseract.js"
 import { AadhaarDetails } from "../types/ocr"
 
-export const extractText=async(imagePath:string)=>{
-    const result=await Tesseract.recognize(path.resolve(imagePath),"eng")
-    return result.data.text
-}
+export const extractText = async (imageBuffer: Buffer) => {
+    const result = await Tesseract.recognize(imageBuffer, "eng");
+    return result.data.text;
+};
+
 export const extractAadhaarNumber = (text: string): string | null => {
     const regex = /\b\d{4}\s?\d{4}\s?\d{4}\b/;
     const match = text.match(regex);
