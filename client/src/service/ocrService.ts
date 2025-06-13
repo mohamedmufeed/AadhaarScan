@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios"
 
 
 const isProduction = window.location.hostname !== "localhost";
-const BASE_URL = isProduction ? "http://localhost:6001/api/ocr" :"https://aadhaarscan-1.onrender.com/api/ocr"
+const BASE_URL = isProduction ? "https://aadhaarscan-1.onrender.com/api/ocr" :"http://localhost:6001/api/ocr"
 
 export const processAadhaarOCR = async (formData: any) => {
     try {
