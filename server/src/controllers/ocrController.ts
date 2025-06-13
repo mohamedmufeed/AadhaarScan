@@ -4,7 +4,6 @@ import { IOCRService } from "../interface/services/ocrServiceInterface";
 
 export class OcrController implements IOcrController {
     constructor(private _ocrService: IOCRService) { }
-
     handleAadhaarOCR = async (req: Request, res: Response) => {
         try {
             const files = req.files as { [fieldname: string]: Express.Multer.File[] };
