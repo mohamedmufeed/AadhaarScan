@@ -9,7 +9,7 @@ interface FiledProps{
     copyable:boolean
 }
 
-const ResultField :React.FC<FiledProps>= ({ label, value, icon: Icon, isSensitive = false, copyable = true }) => {
+const ResultField :React.FC<FiledProps>= ({ label, value, icon: Icon = false, copyable = true }) => {
     const [copiedField, setCopiedField] = useState('');
     const copyToClipboard = (text: string, fieldName: string) => {
         navigator.clipboard.writeText(text);

@@ -15,7 +15,7 @@ export const extractAadhaarNumber = (text: string): string | null => {
 
 
  export const extractAadhaarDetails=(frontText: string, backText: string)=>{
-  const nameMatch = frontText.match(/FN\s+(.*)/i);
+const nameMatch = frontText.match(/(?:FN|NN)\s+(.*)/i);
   const dobMatch = frontText.match(/DOB[:\s]*([0-9/]+)/i);
   const genderMatch = frontText.match(/(Male|Female)/i);
   const mobileMatch = frontText.match(/Mobile\s*No[:\s]*(\d{6,})/i);
