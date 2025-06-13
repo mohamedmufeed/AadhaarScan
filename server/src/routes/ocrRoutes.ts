@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { upload } from "../config/multer";
+import upload from "../config/multer";
 import { OcrService } from "../services/ocrService";
 import { OcrController } from "../controllers/ocrController";
 
